@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | HappyHive Studio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111111;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 48px;
+      border-bottom: 1px solid #e5e5e5;
+      background: #ffffff;
+    }
+    .brand {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .nav-links a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #444444;
+      font-size: 15px;
+    }
+    .nav-links a:hover {
+      color: #000000;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 72px 48px 80px;
+    }
+    h1 {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .lead {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #666666;
+      margin-bottom: 48px;
+    }
+    .steps {
+      display: grid;
+      gap: 20px;
+    }
+    .step {
+      border: 1px solid #e5e5e5;
+      border-radius: 20px;
+      padding: 28px;
+      background: #fafafa;
+    }
+    .step h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+    .step p {
+      margin: 0;
+      color: #666666;
+      line-height: 1.7;
+    }
+    .cta {
+      margin-top: 48px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .cta a {
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .btn-dark {
+      background: #111111;
+      color: #ffffff;
+    }
+    .btn-light {
+      background: #f3f3f3;
+      color: #111111;
+      border: 1px solid #dddddd;
+    }
+    footer {
+      padding: 32px 48px;
+      border-top: 1px solid #e5e5e5;
+      color: #666666;
+      font-size: 14px;
+      text-align: center;
+    }
+    @media (max-width: 900px) {
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-links a {
+        margin: 0 10px;
+      }
+      h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="brand">HappyHive Studio</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="spaces.html">Spaces</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>A simpler way to book event spaces</h1>
+    <p class="lead">
+      HappyHive Studio is built around a straightforward idea: finding and reserving a beautiful
+      space should feel calm, quick, and transparent. This prototype shows the direction for a
+      minimalist booking brand with a curated, modern feel.
+    </p>
+
+    <section class="steps">
+      <div class="step">
+        <h3>1. Discover</h3>
+        <p>
+          Browse spaces tailored for workshops, private celebrations, content shoots, and small events.
+        </p>
+      </div>
+      <div class="step">
+        <h3>2. Choose a time</h3>
+        <p>
+          Select a booking window that fits your event instead of being forced into awkward full-day commitments.
+        </p>
+      </div>
+      <div class="step">
+        <h3>3. Host with confidence</h3>
+        <p>
+          Move from inquiry to booking with less friction, clearer pricing, and a more thoughtful venue experience.
+        </p>
+      </div>
+    </section>
+
+    <div class="cta">
+      <a class="btn-dark" href="spaces.html">View Spaces</a>
+      <a class="btn-light" href="index.html">Return Home</a>
+    </div>
+  </main>
+
+  <footer>
+    HappyHive Studio — About the concept.
+  </footer>
+</body>
+</html>
