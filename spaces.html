@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spaces | HappyHive Studio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111111;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 48px;
+      border-bottom: 1px solid #e5e5e5;
+      background: #ffffff;
+    }
+    .brand {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .nav-links a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #444444;
+      font-size: 15px;
+    }
+    .nav-links a:hover {
+      color: #000000;
+    }
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 72px 48px 32px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #666666;
+      max-width: 720px;
+      line-height: 1.7;
+    }
+    .grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 48px 80px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .card {
+      border: 1px solid #e5e5e5;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .image-placeholder {
+      height: 220px;
+      background: linear-gradient(135deg, #f4f4f4, #dcdcdc);
+    }
+    .card-content {
+      padding: 24px;
+    }
+    .card-content h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+    .meta {
+      color: #666666;
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+    .card-content p {
+      color: #666666;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    .price {
+      margin-top: 20px;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .link-row {
+      margin-top: 18px;
+    }
+    .link-row a {
+      text-decoration: none;
+      color: #111111;
+      font-weight: 600;
+    }
+    footer {
+      padding: 32px 48px;
+      border-top: 1px solid #e5e5e5;
+      color: #666666;
+      font-size: 14px;
+      text-align: center;
+    }
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-links a {
+        margin: 0 10px;
+      }
+      .hero h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="brand">HappyHive Studio</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="spaces.html">Spaces</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Curated spaces for modern events</h1>
+    <p>
+      Explore a small collection of flexible venues designed for celebrations, workshops,
+      shoots, and private gatherings. This is prototype content, but it already looks like a business with opinions.
+    </p>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <div class="image-placeholder"></div>
+      <div class="card-content">
+        <h3>Studio One</h3>
+        <div class="meta">Creative shoots · 10–20 pax</div>
+        <p>
+          A clean, naturally lit studio for content sessions, intimate workshops, and brand filming.
+        </p>
+        <div class="price">$120 / 4 hours</div>
+        <div class="link-row"><a href="about.html">See how booking works →</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="image-placeholder"></div>
+      <div class="card-content">
+        <h3>The Loft Room</h3>
+        <div class="meta">Workshops · 15–30 pax</div>
+        <p>
+          A versatile open-plan venue for talks, classes, strategy sessions, and community events.
+        </p>
+        <div class="price">$180 / 4 hours</div>
+        <div class="link-row"><a href="index.html">Back to overview →</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="image-placeholder"></div>
+      <div class="card-content">
+        <h3>Private Event Suite</h3>
+        <div class="meta">Celebrations · 8–18 pax</div>
+        <p>
+          A more intimate space suited for birthdays, dinners, and relaxed social gatherings.
+        </p>
+        <div class="price">$150 / 4 hours</div>
+        <div class="link-row"><a href="about.html">Learn more →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    HappyHive Studio — Prototype spaces page.
+  </footer>
+</body>
+</html>
