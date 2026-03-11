@@ -1,154 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>HappyHive Studio</title>
-
-<style>
-
-body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#FFF8D6;
-    color:#333;
-}
-
-header{
-    text-align:center;
-    padding:60px 20px;
-    background:#FFD84D;
-}
-
-.logo{
-    max-width:220px;
-    margin-bottom:20px;
-}
-
-h1{
-    font-size:48px;
-    margin:10px 0;
-}
-
-.tagline{
-    font-size:20px;
-    opacity:0.8;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:14px 26px;
-    background:#222;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-}
-
-.section{
-    padding:60px 20px;
-    max-width:1000px;
-    margin:auto;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    padding:24px;
-    border-radius:14px;
-    box-shadow:0 6px 16px rgba(0,0,0,0.08);
-}
-
-footer{
-    text-align:center;
-    padding:40px;
-    background:#FFE37A;
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HappyHive Studio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111111;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 48px;
+      border-bottom: 1px solid #e5e5e5;
+      background: #ffffff;
+    }
+    .brand {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .nav-links a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #444444;
+      font-size: 15px;
+    }
+    .nav-links a:hover {
+      color: #000000;
+    }
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 48px 80px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: 60px;
+      line-height: 1.05;
+      margin: 0 0 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #555555;
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 32px;
+    }
+    .button-group a {
+      display: inline-block;
+      padding: 14px 22px;
+      text-decoration: none;
+      border-radius: 999px;
+      margin-right: 12px;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .btn-dark {
+      background: #111111;
+      color: #ffffff;
+    }
+    .btn-light {
+      background: #f3f3f3;
+      color: #111111;
+      border: 1px solid #dddddd;
+    }
+    .hero-card {
+      background: #f7f7f7;
+      border: 1px solid #e5e5e5;
+      border-radius: 24px;
+      padding: 32px;
+    }
+    .hero-card h3 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+    .hero-card p {
+      color: #666666;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .stat-box {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .stat-box strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 48px 80px;
+    }
+    .section h2 {
+      font-size: 36px;
+      margin-bottom: 24px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .feature-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 20px;
+      padding: 28px;
+      background: #ffffff;
+    }
+    .feature-card h3 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+    .feature-card p {
+      color: #666666;
+      line-height: 1.7;
+    }
+    footer {
+      padding: 32px 48px;
+      border-top: 1px solid #e5e5e5;
+      color: #666666;
+      font-size: 14px;
+      text-align: center;
+    }
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 72px;
+      }
+      .feature-grid, .stats {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-links a {
+        margin: 0 10px;
+      }
+      .hero h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <nav>
+    <div class="brand">HappyHive Studio</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="spaces.html">Spaces</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
 
-<header>
+  <section class="hero">
+    <div>
+      <h1>Beautiful event spaces, booked simply.</h1>
+      <p>
+        A minimalist platform for discovering and reserving flexible spaces for workshops,
+        celebrations, shoots, and private gatherings — by the hour.
+      </p>
+      <div class="button-group">
+        <a class="btn-dark" href="spaces.html">Explore Spaces</a>
+        <a class="btn-light" href="about.html">How It Works</a>
+      </div>
+    </div>
 
-<img src="logo.png" class="logo">
+    <div class="hero-card">
+      <h3>Designed for modern gatherings</h3>
+      <p>
+        From intimate workshops to polished brand shoots, HappyHive Studio helps people find
+        calm, flexible venues without the friction of long-term bookings.
+      </p>
+      <div class="stats">
+        <div class="stat-box">
+          <strong>4 hrs+</strong>
+          <span>Flexible minimum booking</span>
+        </div>
+        <div class="stat-box">
+          <strong>Fast</strong>
+          <span>Simple browsing and inquiry flow</span>
+        </div>
+        <div class="stat-box">
+          <strong>Curated</strong>
+          <span>Spaces selected for style and function</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h1>HappyHive Studio</h1>
+  <section class="section">
+    <h2>Why people use it</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Private events</h3>
+        <p>Host birthdays, celebrations, and meetups in spaces that feel polished and intentional.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Creative shoots</h3>
+        <p>Book visual spaces for photo shoots, video production, and content days without overcomplicating logistics.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Workshops & sessions</h3>
+        <p>Run talks, classes, and team sessions in flexible environments that can be reserved by the hour.</p>
+      </div>
+    </div>
+  </section>
 
-<p class="tagline">
-Where Joyful Moments Happen
-</p>
-
-<a class="btn" href="#">Book the Hive</a>
-
-</header>
-
-
-<section class="section">
-
-<h2>How the Hive Works</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>🐝 Choose a Space</h3>
-<p>Browse cozy creative studios perfect for meetups, shoots, or small events.</p>
-</div>
-
-<div class="card">
-<h3>🍯 Pick Your Time</h3>
-<p>Book spaces for 4 hours or more depending on your event needs.</p>
-</div>
-
-<div class="card">
-<h3>✨ Create Moments</h3>
-<p>Host workshops, celebrations, or content shoots in a joyful space.</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2>Example Hive Spaces</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Creative Honeycomb Studio</h3>
-<p>Bright space ideal for content creators and small workshops.</p>
-</div>
-
-<div class="card">
-<h3>Workshop Loft</h3>
-<p>Perfect for talks, craft classes, and team brainstorms.</p>
-</div>
-
-<div class="card">
-<h3>Celebration Room</h3>
-<p>Great for birthdays, meetups, and private gatherings.</p>
-</div>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<p>© HappyHive Studio</p>
-
-</footer>
-
+  <footer>
+    HappyHive Studio — Where joyful moments happen, now dressed in monochrome.
+  </footer>
 </body>
 </html>
