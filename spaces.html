@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spaces | HappyHive Studio</title>
+  <title>Space & Rates | HappyHive Studio</title>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -16,8 +16,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 24px 48px;
-      border-bottom: 1px solid #e5e5e5;
+      padding: 22px 48px;
+      border-bottom: 1px solid #e7e7e7;
       background: #ffffff;
     }
     .brand {
@@ -27,85 +27,136 @@
     .nav-links a {
       margin-left: 24px;
       text-decoration: none;
-      color: #444444;
+      color: #555555;
       font-size: 15px;
     }
     .nav-links a:hover {
-      color: #000000;
+      color: #111111;
     }
-    .hero {
-      max-width: 1100px;
+    .container {
+      max-width: 1160px;
       margin: 0 auto;
-      padding: 72px 48px 32px;
+      padding: 72px 48px 80px;
     }
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 12px;
+    h1 {
+      font-size: 50px;
+      margin: 0 0 14px;
     }
-    .hero p {
+    .lead {
+      max-width: 760px;
       font-size: 18px;
+      line-height: 1.75;
       color: #666666;
-      max-width: 720px;
-      line-height: 1.7;
+      margin-bottom: 34px;
     }
     .grid {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px 48px 80px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      margin-bottom: 24px;
     }
-    .card {
-      border: 1px solid #e5e5e5;
-      border-radius: 22px;
-      overflow: hidden;
+    .panel {
+      border: 1px solid #e7e7e7;
+      border-radius: 24px;
+      padding: 28px;
       background: #ffffff;
     }
-    .image-placeholder {
-      height: 220px;
-      background: linear-gradient(135deg, #f4f4f4, #dcdcdc);
+    .panel-gray {
+      background: #fafafa;
     }
-    .card-content {
-      padding: 24px;
-    }
-    .card-content h3 {
+    .panel h2 {
       margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 22px;
+      font-size: 28px;
+      margin-bottom: 18px;
     }
-    .meta {
-      color: #666666;
+    .rate-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .rate-table tr {
+      border-bottom: 1px solid #ececec;
+    }
+    .rate-table td {
+      padding: 16px 0;
+      vertical-align: top;
       font-size: 15px;
-      margin-bottom: 16px;
     }
-    .card-content p {
-      color: #666666;
-      line-height: 1.7;
-      font-size: 15px;
-    }
-    .price {
-      margin-top: 20px;
-      font-weight: 700;
-      font-size: 18px;
-    }
-    .link-row {
-      margin-top: 18px;
-    }
-    .link-row a {
-      text-decoration: none;
-      color: #111111;
+    .rate-table td:first-child {
+      width: 42%;
       font-weight: 600;
     }
+    .small-copy {
+      color: #666666;
+      line-height: 1.75;
+      font-size: 15px;
+    }
+    .tag-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .tag {
+      border: 1px solid #dcdcdc;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #444444;
+      font-size: 14px;
+    }
+    .three-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .card {
+      border: 1px solid #e7e7e7;
+      border-radius: 20px;
+      padding: 22px;
+      background: #ffffff;
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    .card p {
+      margin: 0;
+      color: #666666;
+      line-height: 1.75;
+      font-size: 15px;
+    }
+    .buttons {
+      margin-top: 28px;
+    }
+    .buttons a {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      margin-right: 10px;
+      font-size: 15px;
+    }
+    .btn-dark {
+      background: #111111;
+      color: #ffffff;
+    }
+    .btn-light {
+      background: #f4f4f4;
+      color: #111111;
+      border: 1px solid #dddddd;
+    }
     footer {
-      padding: 32px 48px;
-      border-top: 1px solid #e5e5e5;
+      border-top: 1px solid #e7e7e7;
+      padding: 30px 48px;
+      text-align: center;
       color: #666666;
       font-size: 14px;
-      text-align: center;
     }
-    @media (max-width: 900px) {
-      .grid {
+    @media (max-width: 920px) {
+      .grid, .three-grid {
         grid-template-columns: 1fr;
       }
       nav {
@@ -115,7 +166,7 @@
       .nav-links a {
         margin: 0 10px;
       }
-      .hero h1 {
+      h1 {
         font-size: 38px;
       }
     }
@@ -126,62 +177,103 @@
     <div class="brand">HappyHive Studio</div>
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="spaces.html">Spaces</a>
+      <a href="spaces.html">Space & Rates</a>
       <a href="about.html">About</a>
     </div>
   </nav>
 
-  <section class="hero">
-    <h1>Curated spaces for modern events</h1>
-    <p>
-      Explore a small collection of flexible venues designed for celebrations, workshops,
-      shoots, and private gatherings. This is prototype content, but it already looks like a business with opinions.
+  <main class="container">
+    <h1>Space, rates, and what’s included</h1>
+    <p class="lead">
+      HappyHive Studio is built as a flexible venue for birthdays, private events, workshops,
+      classes, photo shoots, and pop-up use. The structure below turns your notes into something
+      a real customer could actually understand.
     </p>
-  </section>
 
-  <section class="grid">
-    <div class="card">
-      <div class="image-placeholder"></div>
-      <div class="card-content">
-        <h3>Studio One</h3>
-        <div class="meta">Creative shoots · 10–20 pax</div>
-        <p>
-          A clean, naturally lit studio for content sessions, intimate workshops, and brand filming.
+    <div class="grid">
+      <section class="panel">
+        <h2>Booking rates</h2>
+        <table class="rate-table">
+          <tr>
+            <td>Weekday AM</td>
+            <td>SGD 580</td>
+          </tr>
+          <tr>
+            <td>Weekday PM</td>
+            <td>SGD 680</td>
+          </tr>
+          <tr>
+            <td>Weekend AM</td>
+            <td>SGD 680</td>
+          </tr>
+          <tr>
+            <td>Weekend PM</td>
+            <td>SGD 880</td>
+          </tr>
+          <tr>
+            <td>Cleaning fee</td>
+            <td>+ SGD 80</td>
+          </tr>
+          <tr>
+            <td>Refundable deposit</td>
+            <td>SGD 280</td>
+          </tr>
+        </table>
+        <p class="small-copy" style="margin-top:18px;">
+          These figures are based on your working notes and can be adjusted later. The page is doing prototype duty:
+          enough to feel real, not yet a legally binding scroll from the tax goblins.
         </p>
-        <div class="price">$120 / 4 hours</div>
-        <div class="link-row"><a href="about.html">See how booking works →</a></div>
+      </section>
+
+      <section class="panel panel-gray">
+        <h2>Time slots</h2>
+        <p class="small-copy">
+          <strong>AM Slot:</strong> 10am – 3pm<br><br>
+          <strong>PM Slot:</strong> 5pm – 10pm<br><br>
+          Full-day bookings can be offered separately depending on setup and teardown needs.
+        </p>
+
+        <div class="tag-row">
+          <div class="tag">30–40 pax</div>
+          <div class="tag">Cosy setup</div>
+          <div class="tag">Family-friendly</div>
+          <div class="tag">Photo-friendly</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="three-grid">
+      <div class="card">
+        <h3>Ideal for</h3>
+        <p>
+          Birthdays, parties, private classes, workshops, small corporate events, photo studio sessions,
+          and pop-up events for local businesses and brands.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Interior style</h3>
+        <p>
+          Glass doors, full open concept, movable furniture, bright and photogenic layout,
+          with a palette built around white, black, sand, and neutral earth tones.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Host support</h3>
+        <p>
+          Setup flexibility, practical furniture, family-oriented amenities, and a venue layout that works
+          for both event hosting and content usage.
+        </p>
       </div>
     </div>
 
-    <div class="card">
-      <div class="image-placeholder"></div>
-      <div class="card-content">
-        <h3>The Loft Room</h3>
-        <div class="meta">Workshops · 15–30 pax</div>
-        <p>
-          A versatile open-plan venue for talks, classes, strategy sessions, and community events.
-        </p>
-        <div class="price">$180 / 4 hours</div>
-        <div class="link-row"><a href="index.html">Back to overview →</a></div>
-      </div>
+    <div class="buttons">
+      <a class="btn-dark" href="about.html">Read the Story</a>
+      <a class="btn-light" href="index.html">Back Home</a>
     </div>
-
-    <div class="card">
-      <div class="image-placeholder"></div>
-      <div class="card-content">
-        <h3>Private Event Suite</h3>
-        <div class="meta">Celebrations · 8–18 pax</div>
-        <p>
-          A more intimate space suited for birthdays, dinners, and relaxed social gatherings.
-        </p>
-        <div class="price">$150 / 4 hours</div>
-        <div class="link-row"><a href="about.html">Learn more →</a></div>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <footer>
-    HappyHive Studio — Prototype spaces page.
+    HappyHive Studio — Rates and venue overview.
   </footer>
 </body>
 </html>
