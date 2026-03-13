@@ -1,32 +1,65 @@
 <!DOCTYPE html>
-    .days, .grid { display:grid; grid-template-columns:repeat(7,1fr); gap:10px; }
-    .days div { font-size:14px; color:#777; }
-    .grid div { height:34px; display:flex; align-items:center; justify-content:center; background:#fafafa; border-radius:10px; font-weight:600; }
-    .available { background:#ffffff !important; border:1px solid #dadad7; }
-    .unavailable { background:#d1d1ce !important; }
-    .legend { margin:24px auto 0; width:max-content; background:#fff; padding:14px 18px; border-radius:14px; border:1px solid #ddd; }
-    .dot { display:inline-block; width:14px; height:14px; border-radius:50%; margin:0 8px 0 16px; vertical-align:middle; }
-    footer { text-align:center; color:var(--muted); font-size:14px; padding-top:40px; }
-    @media (max-width: 1000px) {
-      .row { grid-template-columns:1fr; }
-      .arrow { display:none; }
-      header { flex-direction:column; align-items:flex-start; }
-      nav a { margin:0 16px 0 0; }
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HappyHive Studio | Booking Calendar</title>
+  <style>
+    :root{
+      --bg:#f3f3f0;
+      --panel:#ecece8;
+      --text:#2d2d2d;
+      --muted:#666;
+      --dash:3px dashed #d6d6cf;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial, Helvetica, sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:1120px;margin:0 auto;padding:28px 24px 60px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:6px 0 26px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{width:64px;height:64px;object-fit:contain;border-radius:16px;background:#fff;padding:6px}
+    .brand h1{margin:0;font-size:28px}
+    .brand p{margin:4px 0 0;font-size:12px;color:var(--muted)}
+    nav a{text-decoration:none;color:var(--text);margin-left:18px;font-size:15px}
+    .label{display:inline-block;background:var(--panel);padding:16px 28px;border-radius:20px;font-size:22px;font-weight:700;margin-bottom:16px}
+    .row{display:grid;grid-template-columns:70px 1fr 1fr 70px;gap:22px;align-items:center}
+    .arrow{font-size:54px;text-align:center;color:#8a8a86}
+    .calendar{background:var(--panel);border:var(--dash);border-radius:34px;padding:22px}
+    .month{background:#fff;border-radius:18px;padding:22px;text-align:center}
+    .year{letter-spacing:.18em;font-size:18px;color:#666}
+    .title{font-size:40px;font-weight:700;margin:8px 0 18px}
+    .days,.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+    .days div{font-size:14px;color:#777}
+    .grid div{height:34px;display:flex;align-items:center;justify-content:center;background:#fafafa;border-radius:10px;font-weight:600}
+    .available{background:#ffffff !important;border:1px solid #d7d7d2}
+    .unavailable{background:#c8c8c4 !important}
+    .legend{margin:24px auto 0;width:max-content;background:#fff;padding:14px 18px;border-radius:14px;border:1px solid #ddd}
+    .dot{display:inline-block;width:14px;height:14px;border-radius:50%;margin:0 8px 0 16px;vertical-align:middle}
+    footer{text-align:center;color:var(--muted);font-size:14px;padding-top:38px}
+    @media (max-width: 1000px){
+      header{flex-direction:column;align-items:flex-start}
+      nav a{margin:0 14px 0 0}
+      .row{grid-template-columns:1fr}
+      .arrow{display:none}
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div>
-        <div class="logo">HappyHive Studio</div>
-        <div class="tag">Where Joyful Moments Happen</div>
+      <div class="brand">
+        <img src="images/LogoFINAL.jpg" alt="HappyHive Studio logo">
+        <div>
+          <h1>HappyHive Studio</h1>
+          <p>Where Joyful Moments Happen</p>
+        </div>
       </div>
       <nav>
         <a href="index.html">Home</a>
         <a href="story.html">Our Story</a>
         <a href="pricing.html">Pricing</a>
         <a href="calendar.html">Booking Calendar</a>
+        <a href="gallery.html">Gallery</a>
         <a href="partners.html">Our Partners</a>
         <a href="contact.html">Contact Us</a>
       </nav>
@@ -71,7 +104,7 @@
     </section>
 
     <div class="legend">
-      <span class="dot" style="background:#ffffff;border:1px solid #cfcfca"></span> Available
+      <span class="dot" style="background:#fff;border:1px solid #cfcfca"></span> Available
       <span class="dot" style="background:#bfbfbb"></span> Unavailable
     </div>
 
