@@ -1,344 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HappyHive Studio</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #111111;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 48px;
-      border-bottom: 1px solid #e7e7e7;
-      background: #ffffff;
-      position: sticky;
-      top: 0;
-    }
-    .brand {
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-    }
-    .nav-links a {
-      margin-left: 24px;
-      text-decoration: none;
-      color: #555555;
-      font-size: 15px;
-    }
-    .nav-links a:hover {
-      color: #111111;
-    }
-    .hero {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 88px 48px 56px;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 42px;
-      align-items: center;
-    }
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: #f4f4f4;
-      color: #444444;
-      font-size: 13px;
-      margin-bottom: 18px;
-    }
-    .hero h1 {
-      font-size: 60px;
-      line-height: 1.05;
-      margin: 0 0 18px;
-    }
-    .hero p {
-      font-size: 18px;
-      color: #5f5f5f;
-      line-height: 1.75;
-      max-width: 620px;
-      margin-bottom: 30px;
-    }
-    .buttons a {
-      display: inline-block;
-      text-decoration: none;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: 600;
-      margin-right: 10px;
-      font-size: 15px;
-    }
-    .btn-dark {
-      background: #111111;
-      color: #ffffff;
-    }
-    .btn-light {
-      background: #f4f4f4;
-      color: #111111;
-      border: 1px solid #dddddd;
-    }
-    .hero-panel {
-      border: 1px solid #e7e7e7;
-      border-radius: 28px;
-      padding: 28px;
-      background: #fafafa;
-    }
-    .logo-box {
-      height: 180px;
-      border-radius: 20px;
-      border: 1px dashed #cfcfcf;
-      background: linear-gradient(180deg, #ffffff, #f2f2f2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px;
-      color: #666666;
-      font-size: 15px;
-      line-height: 1.6;
-      margin-bottom: 22px;
-    }
-    .panel-title {
-      font-size: 22px;
-      margin: 0 0 8px;
-    }
-    .panel-copy {
-      color: #666666;
-      line-height: 1.7;
-      font-size: 15px;
-      margin-bottom: 18px;
-    }
-    .mini-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-    .mini-card {
-      background: #ffffff;
-      border: 1px solid #e7e7e7;
-      border-radius: 18px;
-      padding: 18px;
-    }
-    .mini-card strong {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-    .section {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 24px 48px 80px;
-    }
-    .section h2 {
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
-    .section-sub {
-      color: #666666;
-      font-size: 17px;
-      line-height: 1.7;
-      max-width: 760px;
-      margin-bottom: 30px;
-    }
-    .three-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .card {
-      border: 1px solid #e7e7e7;
-      border-radius: 22px;
-      padding: 28px;
-      background: #ffffff;
-    }
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 21px;
-    }
-    .card p {
-      margin: 0;
-      color: #666666;
-      line-height: 1.75;
-      font-size: 15px;
-    }
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-top: 10px;
-    }
-    .feature-box {
-      border: 1px solid #e7e7e7;
-      border-radius: 18px;
-      padding: 20px;
-      background: #fafafa;
-    }
-    .feature-box strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 17px;
-    }
-    .feature-box span {
-      color: #666666;
-      line-height: 1.7;
-      font-size: 15px;
-    }
-    footer {
-      border-top: 1px solid #e7e7e7;
-      padding: 30px 48px;
-      text-align: center;
-      color: #666666;
-      font-size: 14px;
-    }
-    @media (max-width: 920px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      .three-grid, .feature-list, .mini-grid {
-        grid-template-columns: 1fr;
-      }
-      nav {
-        flex-direction: column;
-        gap: 12px;
-      }
-      .nav-links a {
-        margin: 0 10px;
-      }
-      .hero h1 {
-        font-size: 42px;
-      }
-      .section h2 {
-        font-size: 30px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <div class="brand">HappyHive Studio</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="spaces.html">Space & Rates</a>
-      <a href="about.html">About</a>
-    </div>
-  </nav>
 
-  <section class="hero">
-    <div>
-      <div class="eyebrow">Cosy · Affordable · Family-friendly</div>
-      <h1>A joyful rental space for little celebrations and meaningful moments.</h1>
-      <p>
-        HappyHive Studio is designed for birthdays, private classes, workshops, photo shoots,
-        small corporate events, and pop-up experiences. A warm and practical venue for babies,
-        kids, and adults — without the eye-watering rental rates that make normal humans question reality.
-      </p>
-      <div class="buttons">
-        <a class="btn-dark" href="spaces.html">View Space & Pricing</a>
-        <a class="btn-light" href="about.html">See the Concept</a>
-      </div>
-    </div>
+    <section class="hero">
+      <div>
+        <div class="label">Our Space</div>
+        <div class="speech">
+          <h1>Carefully designed for moments that matter.</h1>
+          <p class="lead">
+            Aesthetic and flexible layout. Cosy vibes. Less stress on the pocket. Bright and photogenic. Great space for great memories.
+            Perfect for minimalists.
+          </p>
 
-    <div class="hero-panel">
-      <div class="logo-box">
-        Add your clean logo here later.<br>
-        For now, this block acts as your brand placeholder.
-      </div>
-      <h3 class="panel-title">Designed for flexible use</h3>
-      <p class="panel-copy">
-        Built for 30–40 guests with a clean neutral look, child-friendly considerations,
-        and practical amenities for hosts who want an event space that feels welcoming rather than chaotic.
-      </p>
-      <div class="mini-grid">
-        <div class="mini-card">
-          <strong>30–40 pax</strong>
-          <span>Comfortable capacity for small events and private gatherings</span>
-        </div>
-        <div class="mini-card">
-          <strong>AM / PM slots</strong>
-          <span>Flexible half-day and full-day booking options</span>
-        </div>
-        <div class="mini-card">
-          <strong>Neutral interior</strong>
-          <span>White, black, sand, and earth tones for a modern, photogenic space</span>
-        </div>
-        <div class="mini-card">
-          <strong>Multi-use</strong>
-          <span>Birthdays, classes, workshops, shoots, and small brand activations</span>
+          <div class="space-points">
+            <div class="pill">Glassdoor entrance</div>
+            <div class="pill">White interior</div>
+            <div class="pill">Movable white tables and chairs for both kids and adults</div>
+            <div class="pill">Full open concept</div>
+            <div class="pill">Photoshoot corner</div>
+            <div class="pill">1 Toilet & 1 Changing Room</div>
+            <div class="pill">Diaper Changing Station</div>
+            <div class="pill">Pantry</div>
+          </div>
+
+          <p class="bodycopy"><strong>1,260 sqft</strong>, accommodates up to <strong>40 pax</strong>.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <h2>What the space is for</h2>
-    <p class="section-sub">
-      The concept is simple: create a bright, cosy, reasonably priced venue for hosts who want a pleasant space
-      without paying luxury-hotel nonsense money. It is especially suited to family moments, community gatherings,
-      and small creative events.
-    </p>
+      <div>
+        <div class="photo-stage">
+          <img src="images/space-main.jpg" alt="HappyHive Studio interior">
+        </div>
+        <div class="dots"><span></span><span></span><span></span></div>
+        <div class="thumbs">
+          <div class="thumb"></div>
+          <div class="thumb"></div>
+          <div class="thumb"></div>
+          <div class="thumb"></div>
+          <div class="thumb"></div>
+        </div>
+      </div>
+    </section>
 
-    <div class="three-grid">
+    <section class="sections">
       <div class="card">
-        <h3>Birthdays & family parties</h3>
-        <p>
-          A softer, more welcoming alternative to expensive event venues — especially for young families hosting
-          baby birthdays, children’s celebrations, and small gatherings with relatives and friends.
-        </p>
+        <h3>For joyful celebrations</h3>
+        <p>Birthdays, milestone celebrations, baby showers, and little family moments that deserve a bright, comfortable setting.</p>
       </div>
       <div class="card">
-        <h3>Workshops & classes</h3>
-        <p>
-          Ideal for enrichment sessions, parent-child activities, private classes, and community-led events that need
-          a practical, comfortable room with furniture and basic setup support.
-        </p>
+        <h3>For creative use</h3>
+        <p>Creative workshops, photoshoots, private classes, and pop-up events for hosts who want flexibility without visual clutter.</p>
       </div>
       <div class="card">
-        <h3>Photo studio & brand pop-ups</h3>
-        <p>
-          The neutral palette and clean furnishings also make the space suitable for small product shoots,
-          content creation, studio-style sessions, and local brand pop-up use.
-        </p>
+        <h3>For all ages</h3>
+        <p>Adults, kids, and babies are all part of the design logic here. The space is practical, photogenic, and family-considered.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <h2>What guests will find inside</h2>
-    <p class="section-sub">
-      The space isn’t just an empty room with emotional aspirations. It’s meant to be functional, host-friendly,
-      and usable from day one.
-    </p>
-
-    <div class="feature-list">
-      <div class="feature-box">
-        <strong>Fixtures</strong>
-        <span>Pantry, utility room, washroom, changing room, curtains, TV corner, electrical points, kids play corner, and backdoor access for loading and unloading.</span>
-      </div>
-      <div class="feature-box">
-        <strong>Furniture</strong>
-        <span>TV, TV console, coffee table, movable tables and chairs for adults and kids, water dispenser, diaper changing station, baby cot, and shelves.</span>
-      </div>
-      <div class="feature-box">
-        <strong>Family-friendly additions</strong>
-        <span>Nintendo setup, carpet, playmat, ball pit, LEGO sets, board games, studio flashlight, and space that supports both children and adults.</span>
-      </div>
-      <div class="feature-box">
-        <strong>Safety & comfort</strong>
-        <span>Washable non-slip floors, rounded furniture corners, child-safe layout, secured shelves, fire extinguishers, first aid kits, and emergency exit signage.</span>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    HappyHive Studio — A bright space for play, celebration, workshops, and little moments that matter.
-  </footer>
+    <footer>HappyHive Studio — Where joyful moments happen.</footer>
+  </div>
 </body>
 </html>
