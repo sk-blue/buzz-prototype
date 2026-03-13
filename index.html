@@ -1,78 +1,239 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HappyHive Studio</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+background:#f5f5f5;
+color:#222;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:white;
+border-bottom:1px solid #ddd;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+height:50px;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+nav a:hover{
+color:black;
+}
+
+.hero{
+padding:60px 40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+max-width:1200px;
+margin:auto;
+}
+
+.hero img{
+width:100%;
+border-radius:16px;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.hero p{
+color:#555;
+line-height:1.6;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:14px 24px;
+background:black;
+color:white;
+border-radius:25px;
+text-decoration:none;
+}
+
+.section{
+max-width:1200px;
+margin:auto;
+padding:60px 40px;
+}
+
+.section h2{
+margin-bottom:30px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
+
+.gallery img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:14px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:18px;
+border:1px solid #e5e5e5;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#666;
+border-top:1px solid #ddd;
+margin-top:40px;
+}
+
+@media(max-width:900px){
+
+.hero{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <div>
-        <div class="logo">HappyHive Studio</div>
-        <div class="tag">Where Joyful Moments Happen</div>
-      </div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="story.html">Our Story</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="calendar.html">Booking Calendar</a>
-        <a href="partners.html">Our Partners</a>
-        <a href="contact.html">Contact Us</a>
-      </nav>
-    </header>
 
-    <section class="hero">
-      <div>
-        <div class="label">Our Space</div>
-        <div class="speech">
-          <h1>Carefully designed for moments that matter.</h1>
-          <p class="lead">
-            Aesthetic and flexible layout. Cosy vibes. Less stress on the pocket. Bright and photogenic. Great space for great memories.
-            Perfect for minimalists.
-          </p>
+<header>
 
-          <div class="space-points">
-            <div class="pill">Glassdoor entrance</div>
-            <div class="pill">White interior</div>
-            <div class="pill">Movable white tables and chairs for both kids and adults</div>
-            <div class="pill">Full open concept</div>
-            <div class="pill">Photoshoot corner</div>
-            <div class="pill">1 Toilet & 1 Changing Room</div>
-            <div class="pill">Diaper Changing Station</div>
-            <div class="pill">Pantry</div>
-          </div>
+<div class="logo">
+<img src="images/LogoFINAL.jpg">
+<strong>HappyHive Studio</strong>
+</div>
 
-          <p class="bodycopy"><strong>1,260 sqft</strong>, accommodates up to <strong>40 pax</strong>.</p>
-        </div>
-      </div>
+<nav>
+<a href="index.html">Home</a>
+<a href="story.html">Our Story</a>
+<a href="pricing.html">Pricing</a>
+<a href="calendar.html">Calendar</a>
+<a href="partners.html">Partners</a>
+<a href="contact.html">Contact</a>
+</nav>
 
-      <div>
-        <div class="photo-stage">
-          <img src="images/space-main.jpg" alt="HappyHive Studio interior">
-        </div>
-        <div class="dots"><span></span><span></span><span></span></div>
-        <div class="thumbs">
-          <div class="thumb"></div>
-          <div class="thumb"></div>
-          <div class="thumb"></div>
-          <div class="thumb"></div>
-          <div class="thumb"></div>
-        </div>
-      </div>
-    </section>
+</header>
 
-    <section class="sections">
-      <div class="card">
-        <h3>For joyful celebrations</h3>
-        <p>Birthdays, milestone celebrations, baby showers, and little family moments that deserve a bright, comfortable setting.</p>
-      </div>
-      <div class="card">
-        <h3>For creative use</h3>
-        <p>Creative workshops, photoshoots, private classes, and pop-up events for hosts who want flexibility without visual clutter.</p>
-      </div>
-      <div class="card">
-        <h3>For all ages</h3>
-        <p>Adults, kids, and babies are all part of the design logic here. The space is practical, photogenic, and family-considered.</p>
-      </div>
-    </section>
 
-    <footer>HappyHive Studio — Where joyful moments happen.</footer>
-  </div>
+<section class="hero">
+
+<div>
+
+<h1>A cosy joyful space for little celebrations</h1>
+
+<p>
+HappyHive Studio is a bright and welcoming venue designed for birthdays,
+private classes, workshops, photoshoots, and small corporate events.
+A space where babies, kids and adults can gather and create joyful moments.
+</p>
+
+<a class="btn" href="contact.html">Book the Studio</a>
+
+</div>
+
+<div>
+
+<img src="images/16-Hamilton-Road-Farrer-Park-Serangoon-Rd-Singapore.jpg">
+
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<h2>Inside the Studio</h2>
+
+<div class="gallery">
+
+<img src="images/TVcorner.jpg">
+<img src="images/TableChairKids.jpg">
+<img src="images/TableChairAdult.jpg">
+<img src="images/PhotoCorner.jpg">
+<img src="images/BallPitGrey.jpg">
+<img src="images/Photography1.jpg">
+
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<h2>Perfect for</h2>
+
+<div class="features">
+
+<div class="card">
+<h3>Birthday Parties</h3>
+<p>Celebrate milestones in a cosy environment designed for family gatherings and kids parties.</p>
+</div>
+
+<div class="card">
+<h3>Workshops & Classes</h3>
+<p>Host enrichment classes, creative workshops, and small group sessions comfortably.</p>
+</div>
+
+<div class="card">
+<h3>Photoshoots</h3>
+<p>A bright neutral interior perfect for photo shoots and content creation.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+HappyHive Studio — Where Joyful Moments Happen
+
+</footer>
+
 </body>
 </html>
