@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+      background:#efefed; border:3px dashed #d5d5d0; border-radius:28px; padding:24px;
+    }
+    .wide { grid-column:1 / -1; text-align:center; }
+    h2 { margin:0 0 12px; font-size:28px; }
+    p { margin:0; color:var(--muted); line-height:1.75; font-size:16px; }
+    a { color:#1d6f8b; }
+    footer { text-align:center; color:var(--muted); font-size:14px; padding-top:40px; }
+    @media (max-width: 980px) {
+      .layout, .info-grid { grid-template-columns:1fr; }
+      header { flex-direction:column; align-items:flex-start; }
+      nav a { margin:0 16px 0 0; }
+      .wide { grid-column:auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <div class="logo">HappyHive Studio</div>
+        <div class="tag">Where Joyful Moments Happen</div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="story.html">Our Story</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="calendar.html">Booking Calendar</a>
+        <a href="partners.html">Our Partners</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <div class="label">Contact Us</div>
+
+    <section class="layout">
+      <div class="form-shell">
+        <div class="form-card">
+          <div class="note">To send us a message, first leave your contact info so we can get back to you.</div>
+          <div class="field">Name</div>
+          <div class="field">Email</div>
+          <div class="field">Event date / message</div>
+          <button class="submit">Submit</button>
+        </div>
+      </div>
+
+      <div class="info-grid">
+        <article class="info">
+          <h2>Address</h2>
+          <p>16 Hamilton Road,<br>Singapore 201986</p>
+        </article>
+
+        <article class="info">
+          <h2>Contact</h2>
+          <p>Instagram:<br><a href="#">@happyhivestudio.co</a><br><br>Email:<br>happyhivestudio@gmail.com</p>
+        </article>
+
+        <article class="info">
+          <h2>Opening Hours</h2>
+          <p>Mon – Sun<br>10am to 10pm</p>
+        </article>
+
+        <article class="wide">
+          <p>Drop us a DM on Instagram anytime, anywhere. We’re here to help.<br><br><strong>Corporate bookings are welcomed!</strong></p>
+        </article>
+      </div>
+    </section>
+
+    <footer>Wire this form to Formspree, Tally, or Google Forms later if you want a real submission flow.</footer>
+  </div>
+</body>
+</html>
