@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HappyHive Studio | Gallery</title>
+  <style>
+    :root{
+      --bg:#f3f3f0;
+      --panel:#ecece8;
+      --text:#2d2d2d;
+      --muted:#666;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial, Helvetica, sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:1180px;margin:0 auto;padding:28px 24px 60px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:6px 0 26px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{width:64px;height:64px;object-fit:contain;border-radius:16px;background:#fff;padding:6px}
+    .brand h1{margin:0;font-size:28px}
+    .brand p{margin:4px 0 0;font-size:12px;color:var(--muted)}
+    nav a{text-decoration:none;color:var(--text);margin-left:18px;font-size:15px}
+    .label{display:inline-block;background:var(--panel);padding:16px 28px;border-radius:20px;font-size:22px;font-weight:700;margin-bottom:16px}
+    p.lead{margin:0 0 24px;color:#555;line-height:1.75;font-size:17px;max-width:760px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .shot{
+      background:#fff;
+      border:1px solid #e1e1dc;
+      border-radius:24px;
+      padding:12px;
+    }
+    .shot img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+      border-radius:16px;
+      display:block;
+    }
+    .cap{
+      padding:12px 6px 4px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    footer{text-align:center;color:var(--muted);font-size:14px;padding-top:38px}
+    @media (max-width: 920px){
+      header{flex-direction:column;align-items:flex-start}
+      nav a{margin:0 14px 0 0}
+      .gallery{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img src="images/LogoFINAL.jpg" alt="HappyHive Studio logo">
+        <div>
+          <h1>HappyHive Studio</h1>
+          <p>Where Joyful Moments Happen</p>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="story.html">Our Story</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="calendar.html">Booking Calendar</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="partners.html">Our Partners</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <div class="label">Gallery</div>
+    <p class="lead">
+      A closer look at the space, furnishings, family-friendly setup, and little corners that make the venue feel bright, practical, and joyful.
+    </p>
+
+    <section class="gallery">
+      <article class="shot">
+        <img src="images/16-Hamilton-Road-Farrer-Park-Serangoon-Rd-Singapore.jpg" alt="Main venue space">
+        <div class="cap">Main venue space</div>
+      </article>
+
+      <article class="shot">
+        <img src="images/TVcorner.jpg" alt="TV corner">
+        <div class="cap">TV corner</div>
+      </article>
+
+      <article class="shot">
+        <img src="images/TableChairKids.jpg" alt="Kids table and chairs">
+        <div class="cap">Kids table and chairs</div>
+      </article>
+
+      <article class="shot">
+        <img src="images/TableChairAdult.jpg" alt="Adult table and chairs">
+        <div class="cap">Adult table and chairs</div>
+      </article>
+
+      <article class="shot">
+        <img src="images/PhotoCorner.jpg" alt="Photo corner">
+        <div class="cap">Photo corner</div>
+      </article>
+
+      <article class="shot">
+        <img src="images/BallPitGrey.jpg" alt="Ball pit">
+        <div class="cap">Ball pit</div>
+      </article>
+    </section>
+
+    <footer>More images can be added here later as the studio evolves.</footer>
+  </div>
+</body>
+</html>
