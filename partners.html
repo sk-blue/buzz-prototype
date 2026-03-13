@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HappyHive Studio | Our Partners</title>
+  <style>
+    :root { --bg:#f5f5f3; --card:#efefed; --text:#2f2f2f; --muted:#666; --white:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial, Helvetica, sans-serif; background:var(--bg); color:var(--text); }
+    .wrap { max-width:1120px; margin:0 auto; padding:28px 24px 64px; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:24px; padding:8px 0 28px; }
+    .logo { font-size:28px; font-weight:700; }
+    .tag { font-size:12px; color:var(--muted); margin-top:4px; }
+    nav a { color:var(--text); text-decoration:none; margin-left:20px; font-size:16px; }
+    .label { display:inline-block; background:var(--card); border-radius:16px; padding:16px 28px; font-weight:700; font-size:20px; margin-bottom:18px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .partner { background:#efefed; border:3px dashed #d5d5d0; border-radius:30px; padding:26px; text-align:center; }
+    .partner h2 { margin:0 0 18px; font-size:28px; }
+    .logo-box { height:180px; border-radius:18px; background:#fff; border:1px solid #e0e0dc; display:flex; align-items:center; justify-content:center; color:#8a8a88; font-size:18px; }
+    p { color:var(--muted); line-height:1.75; }
+    footer { text-align:center; color:var(--muted); font-size:14px; padding-top:40px; }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns:1fr; }
+      header { flex-direction:column; align-items:flex-start; }
+      nav a { margin:0 16px 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <div class="logo">HappyHive Studio</div>
+        <div class="tag">Where Joyful Moments Happen</div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="story.html">Our Story</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="calendar.html">Booking Calendar</a>
+        <a href="partners.html">Our Partners</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <div class="label">Our Partners</div>
+    <section class="grid">
+      <article class="partner">
+        <h2>Photography Services</h2>
+        <div class="logo-box">Partner logo here</div>
+        <p>Capture the little moments, milestone celebrations, and polished event memories.</p>
+      </article>
+
+      <article class="partner">
+        <h2>Food Catering</h2>
+        <div class="logo-box">Partner logo here</div>
+        <p>Simple catering options for hosts who want convenience without turning the event into a spreadsheet crisis.</p>
+      </article>
+
+      <article class="partner">
+        <h2>Decoration & Backdrop</h2>
+        <div class="logo-box">Partner logo here</div>
+        <p>Backdrop styling, decorations, and add-on visual support for birthdays and special occasions.</p>
+      </article>
+    </section>
+
+    <footer>Add your partner logos later as images for a more finished look.</footer>
+  </div>
+</body>
+</html>
