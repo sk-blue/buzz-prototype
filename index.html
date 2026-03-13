@@ -1,239 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HappyHive Studio | Our Space</title>
+  <style>
+    :root{
+      --bg:#f3f3f0;
+      --panel:#ecece8;
+      --card:#ffffff;
+      --text:#2d2d2d;
+      --muted:#666;
+      --line:#d7d7d2;
+      --dash:3px dashed #d6d6cf;
+      --radius:30px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+    .wrap{
+      max-width:1180px;
+      margin:0 auto;
+      padding:28px 24px 60px;
+    }
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:24px;
+      padding:6px 0 26px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .brand img{
+      width:64px;
+      height:64px;
+      object-fit:contain;
+      border-radius:16px;
+      background:#fff;
+      padding:6px;
+    }
+    .brand h1{
+      margin:0;
+      font-size:28px;
+      line-height:1.05;
+    }
+    .brand p{
+      margin:4px 0 0;
+      font-size:12px;
+      color:var(--muted);
+    }
+    nav a{
+      text-decoration:none;
+      color:var(--text);
+      margin-left:18px;
+      font-size:15px;
+    }
+    nav a:hover{ text-decoration:underline; }
 
-<title>HappyHive Studio</title>
+    .label{
+      display:inline-block;
+      background:var(--panel);
+      padding:16px 28px;
+      border-radius:20px;
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:16px;
+    }
 
-<style>
+    .hero{
+      display:grid;
+      grid-template-columns:1.05fr 0.95fr;
+      gap:28px;
+      align-items:start;
+    }
+    .speech{
+      background:var(--panel);
+      border:var(--dash);
+      border-radius:40px;
+      padding:30px 28px;
+    }
+    .speech h2{
+      margin:0 0 14px;
+      font-size:34px;
+      line-height:1.12;
+    }
+    .speech p{
+      margin:0 0 16px;
+      color:#555;
+      line-height:1.75;
+      font-size:17px;
+    }
+    .points{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin:20px 0;
+    }
+    .pill{
+      background:var(--card);
+      border:1px solid #e2e2dd;
+      border-radius:18px;
+      padding:14px 16px;
+      font-size:15px;
+      line-height:1.45;
+    }
 
-body{
-margin:0;
-font-family: Arial, Helvetica, sans-serif;
-background:#f5f5f5;
-color:#222;
-}
+    .image-stage{
+      background:var(--card);
+      border:1px solid #dfdfda;
+      border-radius:22px;
+      padding:12px;
+      box-shadow:0 8px 18px rgba(0,0,0,0.05);
+    }
+    .image-stage img{
+      width:100%;
+      height:430px;
+      object-fit:cover;
+      border-radius:14px;
+      display:block;
+    }
+    .dots{
+      text-align:center;
+      padding:14px 0 4px;
+    }
+    .dots span{
+      display:inline-block;
+      width:11px;
+      height:11px;
+      border-radius:50%;
+      border:1.5px solid #7d7d79;
+      margin:0 8px;
+      background:transparent;
+    }
+    .thumbs{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:10px;
+      margin-top:14px;
+    }
+    .thumbs img{
+      width:100%;
+      height:86px;
+      object-fit:cover;
+      border-radius:10px;
+      border:1px solid #dfdfda;
+      background:#fff;
+    }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-background:white;
-border-bottom:1px solid #ddd;
-}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:34px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid #e1e1dc;
+      border-radius:24px;
+      padding:24px;
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:21px;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:15px;
+    }
 
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-}
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      padding-top:38px;
+    }
 
-.logo img{
-height:50px;
-}
-
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:#333;
-font-weight:500;
-}
-
-nav a:hover{
-color:black;
-}
-
-.hero{
-padding:60px 40px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-max-width:1200px;
-margin:auto;
-}
-
-.hero img{
-width:100%;
-border-radius:16px;
-}
-
-.hero h1{
-font-size:42px;
-margin-bottom:20px;
-}
-
-.hero p{
-color:#555;
-line-height:1.6;
-}
-
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:14px 24px;
-background:black;
-color:white;
-border-radius:25px;
-text-decoration:none;
-}
-
-.section{
-max-width:1200px;
-margin:auto;
-padding:60px 40px;
-}
-
-.section h2{
-margin-bottom:30px;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:18px;
-}
-
-.gallery img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:14px;
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:18px;
-border:1px solid #e5e5e5;
-}
-
-footer{
-text-align:center;
-padding:40px;
-color:#666;
-border-top:1px solid #ddd;
-margin-top:40px;
-}
-
-@media(max-width:900px){
-
-.hero{
-grid-template-columns:1fr;
-}
-
-}
-
-</style>
-
+    @media (max-width: 960px){
+      header{flex-direction:column;align-items:flex-start}
+      nav a{margin:0 14px 0 0}
+      .hero,.cards,.points,.thumbs{grid-template-columns:1fr}
+      .image-stage img{height:300px}
+      .speech h2{font-size:28px}
+    }
+  </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img src="images/LogoFINAL.jpg" alt="HappyHive Studio logo">
+        <div>
+          <h1>HappyHive Studio</h1>
+          <p>Where Joyful Moments Happen</p>
+        </div>
+      </div>
 
-<header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="story.html">Our Story</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="calendar.html">Booking Calendar</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="partners.html">Our Partners</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </header>
 
-<div class="logo">
-<img src="images/LogoFINAL.jpg">
-<strong>HappyHive Studio</strong>
-</div>
+    <div class="label">Our Space</div>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="story.html">Our Story</a>
-<a href="pricing.html">Pricing</a>
-<a href="calendar.html">Calendar</a>
-<a href="partners.html">Partners</a>
-<a href="contact.html">Contact</a>
-</nav>
+    <section class="hero">
+      <div>
+        <div class="speech">
+          <h2>Carefully designed for moments that matter.</h2>
+          <p>
+            Aesthetic and flexible layout. Cosy vibes. Less stress on the pocket.
+            Bright and photogenic. Great space for great memories. Perfect for minimalists.
+          </p>
+          <p>
+            Built for birthdays, workshops, photoshoots, private classes, small corporate events,
+            and little celebrations for babies, kids, and adults.
+          </p>
 
-</header>
+          <div class="points">
+            <div class="pill">Glassdoor entrance</div>
+            <div class="pill">White interior</div>
+            <div class="pill">Movable white tables and chairs for both kids and adults</div>
+            <div class="pill">Full open concept</div>
+            <div class="pill">Photoshoot corner</div>
+            <div class="pill">1 toilet & 1 changing room</div>
+            <div class="pill">Diaper changing station</div>
+            <div class="pill">Pantry</div>
+          </div>
 
+          <p><strong>1,260 sqft</strong>, accommodates up to <strong>40 pax</strong>.</p>
+        </div>
+      </div>
 
-<section class="hero">
+      <div>
+        <div class="image-stage">
+          <img src="images/16-Hamilton-Road-Farrer-Park-Serangoon-Rd-Singapore.jpg" alt="HappyHive Studio main space">
+        </div>
+        <div class="dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="thumbs">
+          <img src="images/TVcorner.jpg" alt="TV corner">
+          <img src="images/TableChairKids.jpg" alt="Kids table and chairs">
+          <img src="images/TableChairAdult.jpg" alt="Adult table and chairs">
+          <img src="images/PhotoCorner.jpg" alt="Photo corner">
+          <img src="images/BallPitGrey.jpg" alt="Ball pit">
+        </div>
+      </div>
+    </section>
 
-<div>
+    <section class="cards">
+      <article class="card">
+        <h3>For joyful celebrations</h3>
+        <p>Birthdays, baby milestones, and family gatherings in a bright and cosy setting.</p>
+      </article>
 
-<h1>A cosy joyful space for little celebrations</h1>
+      <article class="card">
+        <h3>For creative use</h3>
+        <p>Photoshoots, private classes, workshops, and pop-up events with flexible furniture and a clean visual style.</p>
+      </article>
 
-<p>
-HappyHive Studio is a bright and welcoming venue designed for birthdays,
-private classes, workshops, photoshoots, and small corporate events.
-A space where babies, kids and adults can gather and create joyful moments.
-</p>
+      <article class="card">
+        <h3>For all ages</h3>
+        <p>Designed with adults, kids, and babies in mind — practical, photogenic, and family-considered.</p>
+      </article>
+    </section>
 
-<a class="btn" href="contact.html">Book the Studio</a>
-
-</div>
-
-<div>
-
-<img src="images/16-Hamilton-Road-Farrer-Park-Serangoon-Rd-Singapore.jpg">
-
-</div>
-
-</section>
-
-
-
-<section class="section">
-
-<h2>Inside the Studio</h2>
-
-<div class="gallery">
-
-<img src="images/TVcorner.jpg">
-<img src="images/TableChairKids.jpg">
-<img src="images/TableChairAdult.jpg">
-<img src="images/PhotoCorner.jpg">
-<img src="images/BallPitGrey.jpg">
-<img src="images/Photography1.jpg">
-
-</div>
-
-</section>
-
-
-
-<section class="section">
-
-<h2>Perfect for</h2>
-
-<div class="features">
-
-<div class="card">
-<h3>Birthday Parties</h3>
-<p>Celebrate milestones in a cosy environment designed for family gatherings and kids parties.</p>
-</div>
-
-<div class="card">
-<h3>Workshops & Classes</h3>
-<p>Host enrichment classes, creative workshops, and small group sessions comfortably.</p>
-</div>
-
-<div class="card">
-<h3>Photoshoots</h3>
-<p>A bright neutral interior perfect for photo shoots and content creation.</p>
-</div>
-
-</div>
-
-</section>
-
-
-
-<footer>
-
-HappyHive Studio — Where Joyful Moments Happen
-
-</footer>
-
+    <footer>HappyHive Studio — Where joyful moments happen.</footer>
+  </div>
 </body>
 </html>
